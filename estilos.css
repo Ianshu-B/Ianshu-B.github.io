@@ -1,0 +1,127 @@
+body{
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica;
+}
+
+nav{
+    display: flex;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+    
+}
+
+.ContenedorH1{
+    color:aqua;
+    font-size: 45px;
+    border-style: solid  blue;
+    animation: text 5s linear infinite; /*propiedad para generar efecto arcohiris en titulos*/
+}
+@keyframes text{
+    0%{
+        filter:hue-rotate(0deg)
+    }
+    100%{
+        filter:hue-rotate(360deg)
+    }
+}
+
+ul li{
+    display:inline-block;
+    padding: 0px 20px;
+}
+a{
+    color:aqua;
+    text-decoration:none;
+}
+
+a:hover{
+    color:violet;
+}
+
+.Contenedor1{
+    display: flex;
+    justify-content: center;
+}
+.ClasePadre{ /*Utilice una clase padre para poder utilizar otros atributos en la clase Hija .Cuadrado*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cuadrado{
+    background:rgba(0, 255, 251, 0.672);
+  width:100vw; /*Se ajusta al ancho del texto */
+  padding: 10px; /* Espacio interno para el texto*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:relative ;
+  margin-bottom: 20px;
+    
+}
+.Contenedor2 h1{
+   color: rgba(10, 231, 209, 0.959);
+}
+.Contenedor1 h2{
+    color: white;
+}
+.Imagen{
+    display: flex;
+    justify-content: center;
+}
+   
+.Tablass{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.Tablass table{
+    max-width: 200px;
+    flex: 1 1 500px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+
+
+.Contenedor2 p{
+    font-size: larger;
+    color: white;
+
+}
+
+.Contenedor2 table, th, td{
+    color: white;
+    border:2px solid rgb(0, 255, 247);
+    border-collapse: collapse;
+}
+
+
+
+
+.Texto{
+    color: white;
+}
+
+.TablasPC img{
+    max-width: 2000px;
+    max-height: 200px;
+}
+
+
+
+
+
+
+
+
+
+

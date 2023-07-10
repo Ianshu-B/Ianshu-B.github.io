@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(81, 21, 80);
+    background-image: url(Fondo2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica;
+
+}
+
+
+.SoyDiv{
+    width: 400px;
+    margin: 0px auto;
+}
+.SoyDiv h1{
+    color: violet;
+}
+.Canciones h1{
+    color: violet;
+    
+
+}
+.Canciones{
+    font-size: 30px;
+}
+
+.Peliculas h1{
+    color: violet;
+}
+
+.Peliculas{
+    
+    font-size: 30px;
+    color:white;
+    
+    
+    
+}
+.Series h1{
+    color: violet;
+}
+
+
+.Series {
+    
+    color:white;
+   font-size: 30px;
+    
+}
+
+.Colores h1{
+    color:violet
+}
+
+.Colores{
+    font-size: 30px;
+}
+
+.liColor{
+    color: green;
+}
+
+.li2Color{
+    color: red;
+}
+.li3Color{
+    color: blue;
+}
+
