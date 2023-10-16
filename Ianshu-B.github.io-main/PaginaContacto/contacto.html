@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+    /*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+   <!--Navbar-->
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="#">Mi Sitio Web</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto.html">Actualmente te encontrás en la parte de Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+   <!--Navbar :D-->
+
+    <div class="Titulo">
+        <h1>Si usted desea contactarme, complete la información en el formulario que se encuentra<br>
+        a continuación</h1>
+    </div>
+
+
+    <form id="miFormulario" class="Formulario" onsubmit="return Confirmacion();">
+        <h1>Formulario de Registro</h1>
+        <label for="nombre">Nombre</label><br>
+        <input class="Control" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+        <br>
+        <br>
+        <label for="Correo">Correo</label><br>
+        <input class="Control" type="text" name="correo" id="Correo" placeholder="Ingrese su Correo">
+        <br>
+        <br>
+        <label for="Mensaje">Ingrese su mensaje:</label>
+        <textarea id="mensaje" name="mensaje" class="Control Control--mensaje" placeholder="Mensaje:"></textarea>  
+        <br>
+        <br>
+        <input class="Boton" type="submit" value="Enviar">
+    </form>
+    <script>
+
+function Confirmacion() { //Utilizo JS para crear una funcion que valide si el mensaje se envió y si quier enviar pero es nulo el campo
+    var nombre = document.getElementById("nombre").value;
+    var correo = document.getElementById("Correo").value;
+    var mensaje = document.getElementById("mensaje").value;
+
+    // Valido que los campos no sean nulos :D
+
+    if (nombre === "" || correo === "" || mensaje === "") {
+        alert("No se olvide de completar los campos necesarios antes de enviar el mensaje.");
+        return false; 
+    } else {
+        alert("Mensaje enviado exitosamente. Muchas gracias");
+        return true; 
+    }
+}
+
+    </script>
+
+    <!--Card :D-->
+
+    <div class="card" style="width: 18rem;">
+      <img src="CaraFeliz-removebg-preview.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Te quería decir que..</h5>
+        <p class="card-text">Muchas gracias por utilizar mi página!.</p>
+        <a href="#" class="btn btn-primary">Volver arriba</a>
+      </div>
+    </div>
+
+    <!--Card-->
+
+<script>
+
+    addEventListener("load", () => {
+        console.log("Hola mundo")
+        const form = document.getElementById("miFormulario");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            fetch("http://127.0.0.1:3000/guardar", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {"Content-Type": "application/json"} 
+            }).then(res => res.json())
+            .then((res) => { 
+                console.log(res)
+                form.reset()
+            })
+            .catch((err) => console.log(err))
+        })
+    })
+
+
+</script>
+    
+</body>
+</html>

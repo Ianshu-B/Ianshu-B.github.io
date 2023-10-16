@@ -1,0 +1,52 @@
+body{
+    background-image: url(FondoContacto.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Formulario{
+    width: 400px;
+    background-color:rgba(0, 255, 238, 0.209) ;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow:7px 13px 37px #000; /*Sombras*/
+}
+.Formulario h1{
+    font-size:22px;
+    margin-bottom:20px;
+
+}
+.Titulo{
+    color: rgb(28, 155, 155);
+    border: solid;
+    width: 100vw;
+}
+
+.Control{
+    width:100%;
+    background:rgb(251, 252, 252);
+    padding:10px;
+    border-radius:4px;
+    margin-bottom:16px;
+    border: 1px solid;
+    font-size: 18px;
+}
+
+.Formulario .Boton{
+    width: 100%;
+    padding: 12px;
+}
+
+.Control .Control--mensaje{
+    resize: none; 
+}
+
+
