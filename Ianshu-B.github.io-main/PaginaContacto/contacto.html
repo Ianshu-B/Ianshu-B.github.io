@@ -38,7 +38,7 @@
     </div>
 
 
-    <form id="miFormulario" class="Formulario" onsubmit="return Confirmacion();">
+    <form id="miFormulario" class="Formulario">
         <h1>Formulario de Registro</h1>
         <label for="nombre">Nombre</label><br>
         <input class="Control" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
@@ -56,38 +56,6 @@
     </form>
     <script>
 
-async function Confirmacion() { //Utilizo JS para crear una funcion que valide si el mensaje se envió y si quier enviar pero es nulo el campo
-    var nombre = document.getElementById("nombre").value;
-    var correo = document.getElementById("Correo").value;
-    var mensaje = document.getElementById("mensaje").value;
-
-    // Valido que los campos no sean nulos :D
-
-    if (nombre === "" || correo === "" || mensaje === "") {
-        alert("No se olvide de completar los campos necesarios antes de enviar el mensaje.");
-        return false; 
-    } else {
-        const form = document.getElementById("miFormulario");
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            fetch("https://pagina-tomich.onrender.com/guardar", {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {"Content-Type": "application/json"} 
-            }).then(res => res.json())
-            .then((res) => { 
-                console.log(res)
-                form.reset()
-            })
-            .catch((err) => console.log(err))
-        })
-        alert("Mensaje enviado exitosamente. Muchas gracias");
-        return true; 
-    }
-}
-
     </script>
 
     <!--Card :D-->
@@ -104,7 +72,28 @@ async function Confirmacion() { //Utilizo JS para crear una funcion que valide s
     <!--Card-->
 
 <script>
-    addEventListener("load", () => console.log("Hola mundo"))
+
+    addEventListener("load", () => {
+        console.log("Hola mundo")
+        const form = document.getElementById("miFormulario");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            fetch("https://pagina-tomich.onrender.com/guardar", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {"Content-Type": "application/json"} 
+            }).then(res => res.json())
+            .then((res) => { 
+                console.log(res)
+                form.reset()
+            })
+            .catch((err) => console.log(err))
+        })
+    })
+
+
 </script>
     
 </body>
