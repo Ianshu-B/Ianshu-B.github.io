@@ -96,7 +96,7 @@ function Confirmacion() { //Utilizo JS para crear una funcion que valide si el m
             e.preventDefault();
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            fetch("http://127.0.0.1:3000/guardar", {
+            fetch("https://pagina-tomich.onrender.com/guardar", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {"Content-Type": "application/json"} 
