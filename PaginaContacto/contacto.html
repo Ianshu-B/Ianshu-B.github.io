@@ -41,6 +41,18 @@
         const form = document.getElementById("miFormulario");
         form.addEventListener("submit", (e) => {
             e.preventDefault();
+
+            
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("Correo").value;
+            const mensaje = document.getElementById("mensaje").value;
+
+            if (nombre === "" || correo === "" || mensaje === "") {
+                window.alert("Antes de mandar algo, asegúrese de completar los campos correspondientes.");
+                return;
+            }
+
+
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
             fetch("https://pagina-tomich.onrender.com/guardar", {
